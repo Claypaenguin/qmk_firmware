@@ -1,3 +1,3 @@
-# default TADA68 layout
+# TADA68
 
-This layout replicates the default factory layout of the TADA68.
+This is a german keymap for the Tada68 with some slight changes. 
