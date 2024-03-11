@@ -18,13 +18,7 @@
 #include "quantum.h"
 
 // if we've got an RGB underglow!
-#ifdef V60_POLESTAR
-
-#include "rgblight.h"
-
-#include <avr/pgmspace.h>
-
-#include "action_layer.h"
+#ifdef RGBLIGHT_ENABLE
 
 #define SOFTPWM_LED_TIMER_TOP F_CPU/(256*64)
 
@@ -137,20 +131,6 @@ void set_rgb_pin_off(uint8_t pin) {
 	PORTF |= _BV(pin);
 }
 
-void rgblight_set(void) {
-	  // xprintf("Setting RGB underglow\n");
-    if (!rgblight_config.enable) {
-          led[0].r = 0;
-          led[0].g = 0;
-          led[0].b = 0;
-          set_rgb_pin_off(RGB_RED_PIN);
-          set_rgb_pin_off(RGB_GREEN_PIN);
-          set_rgb_pin_off(RGB_BLUE_PIN);
-    }
-
-   //  //xprintf("Red: %u, Green: %u, Blue: %u\n", led[0].r, led[0].g, led[0].b);
-}
-
 ISR(TIMER3_COMPA_vect)
 {
     static uint8_t pwm = 0;
@@ -191,4 +171,4 @@ ISR(TIMER3_COMPA_vect)
     	softpwm_buff[2] = led[0].b;
   	}
 }
-#endif // V60_POLESTAR
+#endif // RGBLIGHT_ENABLE
