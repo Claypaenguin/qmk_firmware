@@ -28,7 +28,7 @@
     "[json]": {
         "editor.formatOnSave": false
     },
-    "clangd.arguments": [
-        "--header-insertion=never"
-    ]
+    "clangd.arguments": ["--header-insertion=never"],
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
 }
