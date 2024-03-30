@@ -28,6 +28,12 @@ enum layer_names {
   _SET
 };
 
+const uint16_t PROGMEM set_layer_combo[] = {KC_SPC, MO(2), COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(set_layer_combo, MO(9)),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_BASE_MAC] = LAYOUT_reviung34(

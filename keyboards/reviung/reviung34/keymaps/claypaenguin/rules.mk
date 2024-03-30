@@ -1,2 +1,3 @@
 RGBLIGHT_ENABLE = yes
+COMBO_ENABLE = yes
 CONVERT_TO=promicro_rp2040
